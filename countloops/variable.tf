@@ -3,28 +3,35 @@ variable "ami_id" {
     default = "ami-09c813fb71547fc4f"
 }
 
-variable "environment" {
-    type = string
-    default = "prod"
-}
-
 variable "instance_type" {
-    type = map
-    default = {
-        dev = "t3.small"
-        prod = "t3.micro"
-    }
+    type = string
+    default = "t3.micro"
 }
 
-variable "ec2_tags" {
-    type = map
-    default = {
-        project = "expense"
-        component = "backend"
-        environment = "prod"
-        Name = "expense_backend_prod"
-    }
+variable "instances" {
+    type = list
+    default = ["mysql","backend","frontend"]
 }
+
+variable "zone" {
+    
+    default = "Z00031392AAKAOES2QD2K"
+}
+
+variable "domain_name" {
+    
+    default = "katta.blog"
+}
+
+# variable "ec2_tags" {
+#     type = map
+#     default = {
+#         project = "expense"
+#         component = "backend"
+#         environment = "dev"
+#         name = "expense_backend_dev"
+#     }
+# }
 
 variable "ingress_from_port" {
     type = number
