@@ -5,7 +5,7 @@ terraform {
       version = "6.3.0"
     }
   }
-    backend "s3" {
+  backend "s3" {
     bucket = "khvr-remote-state"
     key    = "terraform-expense-vpc"
     region = "us-east-1"

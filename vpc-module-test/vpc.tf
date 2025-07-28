@@ -1,5 +1,5 @@
 module "vpc" {
     source = "../terraform-aws-vpc"
-    project_name = "expense"
-    environment = "dev"
+    project_name = var.project_name
+    environment = var.environment
 }
